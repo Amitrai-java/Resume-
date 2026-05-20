@@ -6,6 +6,10 @@
   <title>Amit Rai | Tech Creator & BCA Student</title>
   <meta name="description" content="Amit Rai – Tech Content Creator, BCA Student, YouTuber. Explore my work, skills and channels."/>
 
+  <!-- ✅ STEP 1: AdSense approve hone ke baad neeche wali line uncomment karo
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 
@@ -246,7 +250,7 @@
       text-transform: uppercase;
       background: var(--card);
     }
-
+    /* AdSense approved hone ke baad yahan <ins> tag aayega */
 
     /* ────── SECTIONS ────── */
     section { padding: 5.5rem 5vw; }
@@ -363,32 +367,6 @@
     .yt-desc { font-size: 0.85rem; color: var(--muted2); line-height: 1.55; }
     .yt-meta { display: flex; gap: 1rem; margin-top: 1rem; font-size: 0.75rem; color: var(--muted); }
     .yt-meta span { display: flex; align-items: center; gap: 0.3rem; }
-    .yt-embed-wrap {
-      position: relative;
-      width: 100%; aspect-ratio: 16/9;
-      background: #000; overflow: hidden;
-    }
-    .yt-embed-wrap iframe {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      border: none;
-    }
-    .yt-embed-wrap .yt-badge {
-      position: absolute; top: 10px; left: 10px; z-index: 2;
-      pointer-events: none;
-    }
-    .yt-full-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid rgba(249,115,22,0.3);
-      padding: 0.3rem 0.8rem;
-      border-radius: 5px;
-      transition: all 0.2s;
-    }
-    .yt-full-btn:hover { background: var(--accent-dim); }
 
     /* ────── EDUCATION ────── */
     .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
@@ -557,12 +535,24 @@
   </div>
 </section>
 
-
+<!-- ── AD SLOT 1 (Top Banner) ── -->
+<div class="ad-slot">
+  📢 Advertisement — AdSense slot (Approved hone ke baad yahan ad aayega)
+  <!--
+  <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+    data-ad-slot="XXXXXXXXXX"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+</div>
 
 <!-- ── ABOUT ── -->
 <section id="about">
   <div class="section-tag">— About Me</div>
-  <div class="section-title">Who Am I?</div>
+  <div class="section-title">Kaun hoon main?</div>
 
   <div class="about-grid">
     <div class="about-timeline">
@@ -601,9 +591,9 @@
     </div>
 
     <div class="about-text">
-      <p>Hi! I'm <strong>Amit Rai</strong> — a passionate tech content creator and computer science student from Delhi. I love learning about technology and explaining it to others in a simple and engaging way.</p>
-      <p>My channel <strong>Tech Rai</strong> is focused on education, where I share tech topics, AI tools and helpful guides. On <strong>Amitxplorerr</strong>, I share my life, vlogs and adventures.</p>
-      <p>Currently learning Java and web development. As a fresher, I'm looking for opportunities where I can grow my skills and contribute to meaningful projects.</p>
+      <p>Namaste! Main <strong>Amit Rai</strong> hoon — Delhi ka ek passionate tech creator aur computer science student. Mujhe technology sikhne aur logon ko simple language mein explain karna bahut achha lagta hai.</p>
+      <p>Mera channel <strong>Tech Rai</strong> education ke liye hai jahan main tech topics, AI tools aur helpful guides share karta hoon. <strong>Amitxplorerr</strong> pe apni life aur adventures dikhata hoon.</p>
+      <p>Java aur web development seekh raha hoon, aur ek fresher ke roop mein main ek aise opportunity ki talash mein hoon jahan apni skills grow kar sakun.</p>
       <div class="about-chips">
         <span class="chip hot">🔥 Content Creator</span>
         <span class="chip hot">⚡ Quick Learner</span>
@@ -619,8 +609,8 @@
 <!-- ── SKILLS ── -->
 <section id="skills">
   <div class="section-tag">— Technical Skills</div>
-  <div class="section-title">What I Know</div>
-  <p class="section-desc">Technical and soft skills that make me a versatile candidate.</p>
+  <div class="section-title">Main kya jaanta hoon</div>
+  <p class="section-desc">Technical aur soft skills jo mujhe ek versatile candidate banate hain.</p>
 
   <div class="skills-grid">
     <div class="skill-card">
@@ -694,59 +684,61 @@
 <!-- ── YOUTUBE ── -->
 <section id="youtube">
   <div class="section-tag">— YouTube Channels</div>
-  <div class="section-title">My Content</div>
-  <p class="section-desc">Creating across two channels — education and entertainment.</p>
+  <div class="section-title">Mera Content</div>
+  <p class="section-desc">Do channels pe create karta hoon — education aur entertainment dono.</p>
 
   <div class="yt-grid">
-    <div class="yt-card">
-      <div class="yt-embed-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/nCyKEq9xS8M"
-          title="Tech Rai - Latest Short"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-        <div class="yt-badge">EDUCATION · SHORT</div>
+    <a class="yt-card" href="https://youtube.com" target="_blank">
+      <div class="yt-thumb yt-thumb-tech">
+        <span>💡</span>
+        <div class="yt-play">▶</div>
+        <div class="yt-badge">EDUCATION</div>
       </div>
       <div class="yt-info">
         <div class="yt-channel">Tech Rai</div>
-        <div class="yt-desc">Technology, AI tools, tutorials and educational content for students and tech enthusiasts.</div>
+        <div class="yt-desc">Technology, AI tools, tutorials aur education content in Hinglish. Students aur tech enthusiasts ke liye.</div>
         <div class="yt-meta">
           <span>🎓 Educational</span>
-          <span>🇮🇳 Hindi</span>
+          <span>🇮🇳 Hinglish</span>
           <span>🤖 AI & Tech</span>
         </div>
-        <a class="yt-full-btn" href="https://youtube.com/shorts/nCyKEq9xS8M" target="_blank">Watch on YouTube ↗</a>
       </div>
-    </div>
+    </a>
 
-    <div class="yt-card">
-      <div class="yt-embed-wrap">
-        <iframe
-          src="https://www.youtube.com/embed/iJN8PCEy_mg"
-          title="Amitxplorerr - Latest Video"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    <a class="yt-card" href="https://youtube.com" target="_blank">
+      <div class="yt-thumb yt-thumb-vlog">
+        <span>🎒</span>
+        <div class="yt-play">▶</div>
         <div class="yt-badge">VLOGS</div>
       </div>
       <div class="yt-info">
         <div class="yt-channel">Amitxplorerr</div>
-        <div class="yt-desc">Life vlogs, exploration and real experiences from Delhi. Documenting my journey and adventures.</div>
+        <div class="yt-desc">Life vlogs, exploration, aur real experiences. Delhi ki zindagi aur adventures dikhata hoon.</div>
         <div class="yt-meta">
           <span>🎬 Vlogs</span>
           <span>🏙️ Delhi</span>
           <span>🌍 Exploration</span>
         </div>
-        <a class="yt-full-btn" href="https://youtu.be/iJN8PCEy_mg" target="_blank">Watch on YouTube ↗</a>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
-
+<!-- ── AD SLOT 2 (Mid-page) ── -->
+<div class="ad-mid">
+  <div class="ad-slot">
+    📢 Advertisement — Mid-page AdSense slot
+    <!--
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  </div>
+</div>
 
 <!-- ── EDUCATION ── -->
 <section id="education">
@@ -778,11 +770,11 @@
 <!-- ── CONTACT ── -->
 <section id="contact">
   <div class="section-tag">— Contact</div>
-  <div class="section-title">Let's Connect</div>
+  <div class="section-title">Baat Karte Hain</div>
 
   <div class="contact-grid">
     <div>
-      <p class="section-desc" style="margin-bottom:0">Feel free to reach out for collaborations, opportunities, or just a friendly conversation.</p>
+      <p class="section-desc" style="margin-bottom:0">Collaborations, opportunities ya koi bhi baat ke liye reach out karo.</p>
       <div class="contact-links">
         <a class="contact-link" href="mailto:amitrai8750@gmail.com">
           <div class="contact-link-icon">✉️</div>
@@ -817,7 +809,7 @@
 
     <div class="contact-cta-box">
       <div class="cta-heading">Let's <span>Work</span><br>Together</div>
-      <p class="cta-sub">I am available for entry-level roles or collaborations. Looking to add tech, content or data skills to your project? Drop me a mail!</p>
+      <p class="cta-sub">Main ek entry-level role ya collaboration ke liye available hoon. Apne projects mein tech, content ya data skills add karna chahte ho? Mail karo!</p>
       <a href="mailto:amitrai8750@gmail.com" class="cta-mail-btn">✉ Send Email</a>
     </div>
   </div>
@@ -825,7 +817,7 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <span>© 2026 <a href="#">Amit Rai</a> · Delhi, India</span>
+  <span>© 2025 <a href="#">Amit Rai</a> · Delhi, India</span>
   <span>Built with ❤️ · <a href="https://github.com/Amitrai-java" target="_blank">GitHub</a></span>
 </footer>
 
