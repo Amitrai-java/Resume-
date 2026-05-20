@@ -386,9 +386,27 @@
       border-radius: 4px; font-size: 0.72rem;
     }
 
-    /* ────── AD SLOT MID ────── */
-    .ad-mid {
-      padding: 1rem 5vw;
+    <!-- ACHIEVEMENTS -->
+<section id="achievements" style="padding:5.5rem 5vw; background:#0f0f0f;">
+  <div style="font-size:0.72rem;letter-spacing:.15em;text-transform:uppercase;color:#f97316;margin-bottom:.8rem;">— Achievements</div>
+  <div style="font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;letter-spacing:-.03em;margin-bottom:1rem;">Certificates & Awards</div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2rem;">
+    
+    <div onclick="this.querySelector('dialog').showModal()" style="background:#141414;border:1px solid #1e1e1e;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .3s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.3)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='#1e1e1e';this.style.transform='translateY(0)'">
+      <img src="certificate.jpg" alt="Google Certificate" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;"/>
+      <div style="padding:1.2rem;">
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.3rem;">Google Student Ambassador Program</div>
+        <div style="font-size:.82rem;color:#888;margin-bottom:.8rem;">Pitch Night Edition · 19 May 2026</div>
+        <span style="background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.3);color:#f97316;padding:.2rem .7rem;border-radius:4px;font-size:.72rem;">🏆 Certificate of Participation</span>
+      </div>
+      <dialog onclick="this.close()" style="background:transparent;border:none;max-width:90vw;padding:0;">
+        <img src="certificate.jpg" style="max-width:90vw;max-height:90vh;border-radius:12px;display:block;"/>
+      </dialog>
+    </div>
+
+  </div>
+</section>
     }
 
     /* ────── CONTACT ────── */
