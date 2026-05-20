@@ -775,6 +775,109 @@ Visit Channel
 
 </section>
 
+  /*.           __________.           */
+
+<script>
+
+/* =========================
+PREMIUM EXTRA FEATURES JS
+========================= */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},2000)
+
+})
+
+const cursor=document.querySelector('.cursor');
+
+document.addEventListener('mousemove',(e)=>{
+
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+
+});
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity=1;
+entry.target.style.transform='translateY(0px)';
+
+}
+
+})
+
+})
+
+document.querySelectorAll('section').forEach(sec=>{
+
+sec.style.opacity=0;
+sec.style.transform='translateY(40px)';
+sec.style.transition='1s';
+
+observer.observe(sec);
+
+})
+
+const modal=document.getElementById("imgModal");
+
+const modalImg=document.getElementById("modalImg");
+
+const images=document.querySelectorAll(".popup-img");
+
+images.forEach(img=>{
+
+img.onclick=function(){
+
+modal.style.display="block";
+
+modalImg.src=this.src;
+
+}
+
+})
+
+document.querySelector(".close-modal").onclick=function(){
+
+modal.style.display="none";
+
+}
+
+</script>
+
 <button id="topBtn">
 <i class="fas fa-arrow-up"></i>
 </button>
@@ -788,6 +891,451 @@ Visit Channel
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 <script>
+
+  <!-- =========================
+ADD THIS COMPLETE CODE
+INSIDE YOUR EXISTING WEBSITE
+========================= -->
+
+<!-- LOADER -->
+<div id="loader">
+  <h1>AMIT RAI</h1>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+
+<!-- FLOATING SOCIAL BAR -->
+<div class="social-bar">
+
+<a href="https://youtube.com/@amitrai-expln?si=tRbQ-KPDIQI8yYaR" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="https://github.com/" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://linkedin.com/" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://wa.me/918920253222" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+<!-- STATS SECTION -->
+<section class="stats-section">
+
+<div class="stat-card">
+<h1>10+</h1>
+<p>Projects</p>
+</div>
+
+<div class="stat-card">
+<h1>2</h1>
+<p>YouTube Channels</p>
+</div>
+
+<div class="stat-card">
+<h1>2027</h1>
+<p>BCA Graduate</p>
+</div>
+
+<div class="stat-card">
+<h1>100%</h1>
+<p>Creative Mindset</p>
+</div>
+
+</section>
+
+<!-- PROJECT SECTION -->
+<section id="projects">
+
+<div class="section-title">
+<h2>Projects</h2>
+<p>Creative digital experiences and modern UI works.</p>
+</div>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>Portfolio Website</h3>
+<p>
+Modern premium responsive portfolio with animation,
+glassmorphism and advanced UI effects.
+</p>
+</div>
+
+<div class="project-card">
+<h3>YouTube Branding</h3>
+<p>
+Creative thumbnails, banners,
+posters and social branding.
+</p>
+</div>
+
+<div class="project-card">
+<h3>Creative Web UI</h3>
+<p>
+Modern responsive UI design
+with smooth interaction effects.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- IMAGE POPUP -->
+<div id="imgModal" class="img-modal">
+
+<span class="close-modal">&times;</span>
+
+<img class="modal-content" id="modalImg">
+
+</div>
+
+<!-- BACK TO TOP -->
+<button id="topBtn">
+<i class="fas fa-arrow-up"></i>
+</button>
+
+<style>
+
+/* =========================
+PREMIUM EXTRA FEATURES CSS
+========================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#0b1120;
+}
+
+::-webkit-scrollbar-thumb{
+background:#00f7ff;
+border-radius:20px;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:#00f7ff20;
+filter:blur(150px);
+top:-100px;
+left:-100px;
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:350px;
+height:350px;
+background:#8b5cf620;
+filter:blur(150px);
+bottom:-100px;
+right:-100px;
+z-index:-1;
+}
+
+#loader{
+position:fixed;
+width:100%;
+height:100vh;
+background:#050816;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+}
+
+#loader h1{
+font-size:60px;
+color:#00f7ff;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(0.9);
+opacity:0.5;
+}
+
+50%{
+transform:scale(1);
+opacity:1;
+}
+
+100%{
+transform:scale(0.9);
+opacity:0.5;
+}
+
+}
+
+.cursor{
+width:20px;
+height:20px;
+border:2px solid #00f7ff;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:9999;
+transition:0.1s;
+box-shadow:0 0 20px #00f7ff;
+}
+
+.stats-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px 8%;
+}
+
+.stat-card{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.08);
+text-align:center;
+transition:0.5s;
+}
+
+.stat-card:hover{
+transform:translateY(-12px);
+box-shadow:0 0 30px rgba(0,247,255,0.3);
+}
+
+.stat-card h1{
+font-size:55px;
+color:#00f7ff;
+margin-bottom:10px;
+}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.project-card{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.5s;
+backdrop-filter:blur(10px);
+}
+
+.project-card:hover{
+transform:translateY(-12px);
+box-shadow:0 0 30px rgba(0,247,255,0.3);
+}
+
+.project-card h3{
+margin-bottom:15px;
+color:#00f7ff;
+}
+
+.social-bar{
+position:fixed;
+top:50%;
+right:20px;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:999;
+}
+
+.social-bar a{
+width:50px;
+height:50px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+color:#00f7ff;
+font-size:20px;
+text-decoration:none;
+transition:0.4s;
+}
+
+.social-bar a:hover{
+background:#00f7ff;
+color:black;
+transform:translateY(-8px);
+}
+
+#topBtn{
+position:fixed;
+bottom:30px;
+right:25px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#00f7ff;
+color:black;
+font-size:20px;
+cursor:pointer;
+display:none;
+z-index:999;
+box-shadow:0 0 20px #00f7ff;
+}
+
+.img-modal{
+display:none;
+position:fixed;
+z-index:99999;
+padding-top:80px;
+left:0;
+top:0;
+width:100%;
+height:100%;
+overflow:auto;
+background:rgba(0,0,0,0.95);
+}
+
+.modal-content{
+margin:auto;
+display:block;
+width:80%;
+max-width:900px;
+border-radius:20px;
+}
+
+.close-modal{
+position:absolute;
+top:20px;
+right:40px;
+color:white;
+font-size:45px;
+cursor:pointer;
+}
+
+.popup-img{
+cursor:pointer;
+transition:0.4s;
+}
+
+.popup-img:hover{
+transform:scale(1.03);
+}
+
+</style>
+
+<script>
+
+/* =========================
+PREMIUM EXTRA FEATURES JS
+========================= */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.display="none";
+
+},2000)
+
+})
+
+const cursor=document.querySelector('.cursor');
+
+document.addEventListener('mousemove',(e)=>{
+
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+
+});
+
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity=1;
+entry.target.style.transform='translateY(0px)';
+
+}
+
+})
+
+})
+
+document.querySelectorAll('section').forEach(sec=>{
+
+sec.style.opacity=0;
+sec.style.transform='translateY(40px)';
+sec.style.transition='1s';
+
+observer.observe(sec);
+
+})
+
+const modal=document.getElementById("imgModal");
+
+const modalImg=document.getElementById("modalImg");
+
+const images=document.querySelectorAll(".popup-img");
+
+images.forEach(img=>{
+
+img.onclick=function(){
+
+modal.style.display="block";
+
+modalImg.src=this.src;
+
+}
+
+})
+
+document.querySelector(".close-modal").onclick=function(){
+
+modal.style.display="none";
+
+}
 
 var typed = new Typed('.typing', {
 
