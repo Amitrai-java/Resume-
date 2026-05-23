@@ -562,79 +562,176 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
 
 <!-- ─────────── LOADER ─────────── -->
 
-let p=0;
-const lpct=document.getElementById("lpct");
-const ldr=document.getElementById("loader");
-const iv=setInterval(()=>{
-  p+=Math.random()*18;
-  if(p>=100){p=100;clearInterval(iv);setTimeout(()=>{ldr.classList.add("done");startCounters();},300);}
-  lpct.textContent=String(Math.floor(p)).padStart(3,"0");
-},80);
+<div id="loader">
+  <div class="loader-name">
+    <span>A</span><span>M</span><span>I</span><span>T</span>
+    <span>&nbsp;</span>
+    <span style="color:var(--lime)">R</span>
+    <span style="color:var(--lime)">A</span>
+    <span style="color:var(--lime)">I</span>
+  </div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-pct" id="lpct">000</div>
+</div>
 
-// ── CURSOR ──
-const c1=document.getElementById("cur"),c2=document.getElementById("fol");
-let mx=0,my=0,fx=0,fy=0;
-document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+"px";c1.style.top=my+"px";});
-(function loop(){fx+=(mx-fx)*.1;fy+=(my-fy)*.1;c2.style.left=fx+"px";c2.style.top=fy+"px";requestAnimationFrame(loop);})();
-document.querySelectorAll("a,button,[onclick],.mod,.ch,.cert").forEach(el=>{
-  el.addEventListener("mouseenter",()=>document.body.classList.add("h"));
-  el.addEventListener("mouseleave",()=>document.body.classList.remove("h"));
-});
+<!-- CURSOR -->
+<div id="cur"></div>
+<div id="fol"></div>
 
-// ── SCROLL REVEAL ──
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("vis");});},{threshold:0.08});
-document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo"><b>A</b>MIT RAI</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#channels">Channels</a></li>
+    <li><a href="#certs">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="nav-pill">Open to Work</span>
+</nav>
 
-// ── COUNTERS ──
-function startCounters(){
-  document.querySelectorAll("[data-count]").forEach(el=>{
-    const target=parseInt(el.dataset.count);
-    let v=0;
-    const step=()=>{
-      v+=Math.ceil(target/25);
-      if(v>=target){el.textContent=String(target).padStart(2,"0");return;}
-      el.textContent=String(v).padStart(2,"0");
-      requestAnimationFrame(step);
-    };
-    setTimeout(step,2400);
-  });
-}
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-wm">AR</div>
+  <div class="scroll-ind">Scroll Down</div>
 
-// ── SCRAMBLE TEXT ──
-const chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#&";
-const orig="NOT YOUR";
-let scambleEl=document.getElementById("scrambleTarget");
-function scramble(){
-  let iter=0;
-  const iv2=setInterval(()=>{
-    scambleEl.textContent=orig.split("").map((_,i)=>{
-      if(i<iter) return orig[i];
-      return chars[Math.floor(Math.random()*chars.length)];
-    }).join("");
-    if(iter>=orig.length){clearInterval(iv2);scambleEl.textContent=orig;}
-    iter+=.5;
-  },40);
-}
-setTimeout(scramble,2600);
+  <p class="hero-eyebrow">Tech Creator &amp; BCA Student</p>
 
-// ── LIGHTBOX ──
-const lbImgs={
-  g:document.querySelector(".cert-grid .cert:nth-child(1) img").src,
-  j:document.querySelector(".cert-grid .cert:nth-child(2) img").src
-};
-function openLB(k){document.getElementById("lb-img").src=lbImgs[k];document.getElementById("lb").classList.add("on");}
-function closeLB(){document.getElementById("lb").classList.remove("on");}
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLB();});
+  <div class="hero-title">
+    <span class="ht-l1" id="scrambleTarget">NOT YOUR</span>
+    <span class="ht-l2">Average</span>
+    <span class="ht-l3">CREATOR</span>
+  </div>
 
-// ── HERO GRID PARALLAX ──
-document.querySelector(".hero-glow").addEventListener;
-document.addEventListener("mousemove",e=>{
-  const glow=document.querySelector(".hero-glow");
-  if(!glow) return;
-  const x=(e.clientX/window.innerWidth-.5)*30;
-  const y=(e.clientY/window.innerHeight-.5)*20;
-  glow.style.transform="translate("+x+"px,"+y+"px)";
-});
-</script>
-</body>
-</html>
+  <div class="hero-bot">
+    <div>
+      <p class="hero-desc">
+        I am <strong>Amit Rai</strong> — building educational tech content on <strong>Tech Rai</strong> and real-life vlogs on <strong>Amitxplorerr.</strong> Currently pursuing <strong>BCA at JB Knowledge Park, Delhi.</strong> Passionate about AI, programming, and content that actually helps people.
+      </p>
+      <div class="hero-btns">
+        <a href="#channels" class="mag-btn primary"><span>▶ Watch Channels</span></a>
+        <a href="#contact" class="mag-btn ghost">Let's Talk →</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat">
+        <div class="h-num" data-count="2">00</div>
+        <div class="h-label">YT Channels</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-num" data-count="20">00</div>
+        <div class="h-label">Age</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-num" style="font-size:2rem;">DELHI</div>
+        <div class="h-label">Based In</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Amit Rai</span><span class="dot">✦</span>
+    <span>Tech Creator</span><span class="dot">✦</span>
+    <span>BCA Student</span><span class="dot">✦</span>
+    <span>Java · Python · C++</span><span class="dot">✦</span>
+    <span>AI Enthusiast</span><span class="dot">✦</span>
+    <span>Delhi India</span><span class="dot">✦</span>
+    <span>Google Certified</span><span class="dot">✦</span>
+    <span>Open to Work</span><span class="dot">✦</span>
+    <span>Amit Rai</span><span class="dot">✦</span>
+    <span>Tech Creator</span><span class="dot">✦</span>
+    <span>BCA Student</span><span class="dot">✦</span>
+    <span>Java · Python · C++</span><span class="dot">✦</span>
+    <span>AI Enthusiast</span><span class="dot">✦</span>
+    <span>Delhi India</span><span class="dot">✦</span>
+    <span>Google Certified</span><span class="dot">✦</span>
+    <span>Open to Work</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ════════ ABOUT ════════ -->
+<section class="section rv" id="about">
+  <span class="s-label">// 01 — About</span>
+  <h2 class="s-title">WHO<br/><em>AM I</em><span class="out">?</span></h2>
+  <div class="about-grid">
+    <div class="about-text rv d1">
+      <p>I am <strong>Amit Rai</strong>, a Tech Content Creator and BCA student from Delhi. I turn complex tech into content students actually understand and use.</p>
+      <p>Running two YouTube channels — <strong>Tech Rai</strong> for educational tech and AI content, and <strong>Amitxplorerr</strong> for real vlogs and my student life.</p>
+      <p>Hands-on in <strong>Java, Python, C, C++</strong> — actively building projects and exploring <strong>AI tools and web development.</strong></p>
+      <p>Recognized by <strong>Google Student Ambassador Program 2026</strong> for exceptional creativity at Pitch Night.</p>
+    </div>
+    <div class="outcome-stage rv d2">
+      <svg class="oc-svg" viewBox="0 0 400 500" preserveAspectRatio="none">
+        <line x1="200" y1="250" x2="50"  y2="40"  stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="200" y1="250" x2="350" y2="40"  stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="200" y1="250" x2="20"  y2="180" stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="200" y1="250" x2="380" y2="180" stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="200" y1="250" x2="20"  y2="320" stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="200" y1="250" x2="380" y2="320" stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="200" y1="250" x2="60"  y2="460" stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="200" y1="250" x2="340" y2="460" stroke="#111" stroke-width="1" stroke-dasharray="4,4"/>
+        <circle cx="200" cy="250" r="5" fill="#c9ff00"/>
+        <circle cx="200" cy="250" r="12" fill="none" stroke="rgba(201,255,0,.2)" stroke-width="1"/>
+      </svg>
+      <div class="f-badge"><span class="bdot"></span>BCA Student</div>
+      <div class="f-badge"><span class="bdot"></span>Delhi Based</div>
+      <div class="f-badge"><span class="bdot"></span>Java &amp; Python</div>
+      <div class="f-badge"><span class="bdot"></span>AI Tools</div>
+      <div class="f-badge"><span class="bdot"></span>2 YT Channels</div>
+      <div class="f-badge"><span class="bdot"></span>Content Creator</div>
+      <div class="f-badge"><span class="bdot"></span>Google Certified</div>
+      <div class="f-badge"><span class="bdot"></span>Open to Work</div>
+      <div class="oc-center">
+        <div class="oc-center-big">AMIT<br/><em>RAI</em></div>
+        <div class="oc-center-sub">Portfolio 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SKILLS ════════ -->
+<div class="skills-wrap rv" id="skills">
+  <div class="skills-inner">
+    <span class="s-label">// 02 — Skills &amp; Stack</span>
+    <h2 class="s-title">NOT YOUR <em>Average</em><br/>SKILL SET</h2>
+    <div class="mod-grid">
+      <div class="mod rv d1">
+        <div class="mod-num">01</div>
+        <div class="mod-title">PROGRAMMING</div>
+        <ul class="mod-list">
+          <li>Java — OOP &amp; DSA</li>
+          <li>Python — Scripting &amp; AI</li>
+          <li>C / C++ — Systems</li>
+          <li>HTML / CSS — Web</li>
+        </ul>
+      </div>
+      <div class="mod rv d2">
+        <div class="mod-num">02</div>
+        <div class="mod-title">AI &amp; TOOLS</div>
+        <ul class="mod-list">
+          <li>ChatGPT &amp; Claude AI</li>
+          <li>AI Image Generation</li>
+          <li>Automation Tools</li>
+          <li>Prompt Engineering</li>
+        </ul>
+      </div>
+      <div class="mod rv d3">
+        <div class="mod-num">03</div>
+        <div class="mod-title">CONTENT</div>
+        <ul class="mod-list">
+          <li>YouTube Strategy</li>
+          <li>Video Editing</li>
+          <li>Hinglish Scripting</li>
+          <li>Audience Building</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
