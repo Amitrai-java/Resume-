@@ -657,7 +657,7 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
 
 <!-- ════════ ABOUT ════════ -->
 <section class="section rv" id="about">
-  <span class="s-label">// 01 — About</span>
+  <span class="s-label">About</span>
   <h2 class="s-title">WHO<br/><em>AM I</em><span class="out">?</span></h2>
   <div class="about-grid">
     <div class="about-text rv d1">
@@ -698,7 +698,7 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
 <!-- ════════ SKILLS ════════ -->
 <div class="skills-wrap rv" id="skills">
   <div class="skills-inner">
-    <span class="s-label">// 02 — Skills &amp; Stack</span>
+    <span class="s-label">Skills &amp; Stack</span>
     <h2 class="s-title">NOT YOUR <em>Average</em><br/>SKILL SET</h2>
     <div class="mod-grid">
       <div class="mod rv d1">
@@ -737,19 +737,19 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
 
 <!-- ════════ CHANNELS ════════ -->
 <section class="section rv" id="channels">
-  <span class="s-label">// 03 — My Work</span>
+  <span class="s-label"> My Work</span>
   <h2 class="s-title">YOUTUBE<br/><em>Channels</em></h2>
   <div class="ch-grid">
     <a href="https://youtube.com/@TechRai" target="_blank" class="ch">
       <div class="ch-num">01</div>
-      <span class="ch-tag">// Educational · Tech · AI</span>
+      <span class="ch-tag"> Educational · Tech · AI</span>
       <div class="ch-name">TECH RAI</div>
       <p class="ch-desc">AI tools, programming tutorials, tech news — educational content for students and tech enthusiasts across India. Real knowledge, zero fluff.</p>
       <div class="ch-cta">Watch Channel →</div>
     </a>
     <a href="https://youtube.com/@Amitxplorerr" target="_blank" class="ch">
       <div class="ch-num">02</div>
-      <span class="ch-tag">// Vlogs · Lifestyle · College</span>
+      <span class="ch-tag"> Vlogs · Lifestyle · College</span>
       <div class="ch-name">AMITXPLORERR</div>
       <p class="ch-desc">Day in my life, college diaries, travel and real adventures — raw, honest and relatable content for young India. No filters, just real life.</p>
       <div class="ch-cta">Watch Channel →</div>
@@ -759,7 +759,7 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
 
 <!-- ════════ CERTS ════════ -->
 <section class="section rv" id="certs">
-  <span class="s-label">// 04 — Achievements</span>
+  <span class="s-label">Achievements</span>
   <h2 class="s-title">CERTS &amp;<br/><em>Proof</em></h2>
   <div class="cert-grid">
     <div class="cert rv d1" onclick="openLB('g')">
@@ -770,7 +770,7 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
       <span class="cert-pill">Google 2026</span>
       <span class="cert-zoom">ZOOM +</span>
       <div class="cert-body">
-        <div class="cert-mono">// Participation · May 2026</div>
+        <div class="cert-mono"> Participation · May 2026</div>
         <div class="cert-title">PITCH NIGHT EDITION</div>
         <div class="cert-desc">Participated in Google Student Ambassador Program 2026 Pitch Night and was recognized for exceptional creativity and innovation.</div>
         <div class="cert-rows">
@@ -788,7 +788,7 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
       <span class="cert-pill">Job Academy</span>
       <span class="cert-zoom">ZOOM +</span>
       <div class="cert-body">
-        <div class="cert-mono">// Course Completion · 2024</div>
+        <div class="cert-mono">Course Completion · 2024</div>
         <div class="cert-title">C, C++, PYTHON &amp; JAVA</div>
         <div class="cert-desc">Completed a 6-month intensive programming course covering four major languages from Job Academy, Delhi.</div>
         <div class="cert-rows">
@@ -830,7 +830,7 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
       <a href="mailto:your@email.com" class="c-link">
         <div class="c-info">
           <div class="c-name">EMAIL</div>
-          <div class="c-sub">your@email.com</div>
+          <div class="c-sub">amitrai8750@gmail.com</div>
         </div>
         <div class="c-arr">→</div>
       </a>
@@ -853,7 +853,7 @@ footer p{font-family:"DM Mono",monospace;font-size:.58rem;color:#1e1e1e;letter-s
 </div>
 
 <footer>
-  <span class="f-logo"><b>A</b>MIT RAI</span>
+  <span class="f-logo"><b>A</b>AMIT RAI</span>
   <p>© 2026 · TECH CREATOR · BCA STUDENT · DELHI, INDIA</p>
 </footer>
 
@@ -874,15 +874,6 @@ const iv=setInterval(()=>{
   lpct.textContent=String(Math.floor(p)).padStart(3,"0");
 },80);
 
-// ── CURSOR ──
-const c1=document.getElementById("cur"),c2=document.getElementById("fol");
-let mx=0,my=0,fx=0,fy=0;
-document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;c1.style.left=mx+"px";c1.style.top=my+"px";});
-(function loop(){fx+=(mx-fx)*.1;fy+=(my-fy)*.1;c2.style.left=fx+"px";c2.style.top=fy+"px";requestAnimationFrame(loop);})();
-document.querySelectorAll("a,button,[onclick],.mod,.ch,.cert").forEach(el=>{
-  el.addEventListener("mouseenter",()=>document.body.classList.add("h"));
-  el.addEventListener("mouseleave",()=>document.body.classList.remove("h"));
-});
 
 // ── SCROLL REVEAL ──
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("vis");});},{threshold:0.08});
